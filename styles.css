@@ -1,9 +1,10 @@
+/* TODO add media queries for more responsiveness*/
+
 html, body {
     margin: 0px;
     padding: 0px;
     height: 100%;
     width: 100%;
-
     background: #1C1C1C
 }
 
@@ -16,15 +17,10 @@ body {
 
 #outer-container {
     box-sizing: border-box;
-    /* height: 550px;
-    width: 550px; */
     height: 100%;
     width: 100%;
 
     padding: 40px;
-    /* padding: 10px; */
-    /* margin: 30px 30px 30px 30px; */
-    /* border: 10px dashed green;  */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,6 +36,10 @@ body {
     flex-direction: column;
 }
 
+.top-half > div, .bottom-half > div {
+    align-items: center;
+}
+
 .top-half {
 
     flex: 1;
@@ -50,8 +50,8 @@ body {
     font-style: normal;
     font-weight: 800;
 
+    /* creating round edges */
     border-radius: 25px 25px 0px 0px;
-
     /* The colour of everything in the top half */
     color: #FFFFFF;
 
@@ -74,28 +74,34 @@ body {
 
 
 #conv-text {
-    font-size: 22px;
-    line-height: 38px;
-    /* identical to box height, or 173% */
-
+    font-size: 1.2vw;
     text-align: center;
-    /* justify-content: center; */
     letter-spacing: -0.05em;
 }
 
 #conv-number {
-    all:none; /* removing pre-applied css by the browser */
     background-color: transparent; 
     color: #FFFFFF;
-
+    width: 6em;
     border: 0px;
-
-    font-size: 97.5723px;
-    line-height: 24px;
+    padding: 0px;
+    font-size: 5vw;
 
     text-align: center;
 }
 
+/* Removes the border like line around the input box */
+#conv-number:focus {
+    outline: none;
+}
+
+/* remove the increment decrement arrows 
+which are present to the right of the input box  */
+#conv-number::-webkit-outer-spin-button,
+#conv-number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 .bottom-half {
     border-radius: 0px 0px 25px 25px;
@@ -105,43 +111,21 @@ body {
     background: #1F2937;
 }
 
-.top-half > div, .bottom-half > div {
-    align-items: center;
-    
-}
-
-div.bottom-half > div.description {
-
-    width: 346px;
-    height: 25px;
-    
+div.output-blocks > div {    
     font-family: 'Inter';
     font-style: normal;
+    text-align: center;
+}
+
+div.description {
     font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-    /* or 143% */
-    
-    text-align: center;
-
+    font-size: 1.5em;
     color: #FFFFFF;
+    padding: 0.5em;
 }
 
-div.output-blocks > div {
-    /*TODO use em units */
-    width: 346px;
-    height: 25px;
-    left: 102px;
-    top: 327px;
-    
-    font-family: 'Inter';
-    font-style: normal;
+div.conv {
     font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    /* or 143% */
-    
-    text-align: center;
-    
+    font-size: 1em;
     color: #D2D2D2;
 }

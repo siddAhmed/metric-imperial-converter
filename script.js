@@ -2,15 +2,16 @@ let input = 20;
 
 let convNumber = document.getElementById("conv-number");
 convNumber.value = input;
-convNumber.addEventListener("keydown", function(e) {
-    console.log("enter was pressed");
-    input = convNumber.value;
-    if (e.key === "Enter") {
-        calcLength();
-        calcVolume();
-        calcMass();
-    }
-})
+
+convNumber.addEventListener("keydown", function (e) {
+  console.log("enter was pressed");
+  input = convNumber.value;
+  if (e.key === "Enter") {
+    calcLength();
+    calcVolume();
+    calcMass();
+  }
+});
 
 let lengthEl = document.getElementById("length-conv");
 let volumeEl = document.getElementById("volume-conv");
@@ -28,20 +29,25 @@ const meterToFeet = 3.2808399;
 const feetToMeter = 0.3048;
 
 // using template literals to directly format the strings
-function calcLength () {
-    lengthEl.textContent = `${input} meters = ${input * meterToFeet} feet | ${input} feet = ${feetToMeter} meters`
+function calcLength() {
+  lengthEl.textContent = `${input} meters = ${
+    input * meterToFeet
+  } feet | ${input} feet = ${feetToMeter} meters`;
 }
 
-function calcVolume () {
-    volumeEl.textContent = `${input} liters = ${input * litersToGallons} gallons | ${input} gallons = ${input * gallonsToLitres} liters`
+function calcVolume() {
+  volumeEl.textContent = `${input} liters = ${
+    input * litersToGallons
+  } gallons | ${input} gallons = ${input * gallonsToLitres} liters`;
 }
 
-function calcMass () {
-    massEl.textContent = `${input} kilos = ${input * kiloToPound} pounds | ${input} pounds = ${input * poundToKilo} kilos`
+function calcMass() {
+  massEl.textContent = `${input} kilos = ${
+    input * kiloToPound
+  } pounds | ${input} pounds = ${input * poundToKilo} kilos`;
 }
 
 // Calling all the calculator functions to initialize the values according to input
 calcLength();
 calcVolume();
 calcMass();
-
