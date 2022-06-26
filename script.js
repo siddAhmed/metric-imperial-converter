@@ -32,7 +32,7 @@ const feetToMeter = 0.3048;
 function calcLength() {
   lengthEl.textContent = `${input} meters = ${
     input * meterToFeet
-  } feet | ${input} feet = ${feetToMeter} meters`;
+  } feet | ${input} feet = ${input * feetToMeter} meters`;
 }
 
 function calcVolume() {
